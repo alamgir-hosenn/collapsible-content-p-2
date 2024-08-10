@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: rgb(0, 0, 0);
+  background: rgb(212, 212, 212);
 }
 .container {
   width: 80%;
@@ -19,23 +19,39 @@ body {
   padding: 0 1em;
   outline: none;
   border: none;
+  cursor: pointer;
   position: relative;
   border-bottom: 2px solid rgb(0, 91, 128);
 }
-.collapsible::after {
+/* .collapsible::after {
   position: absolute;
   content: "+";
   right: 1em;
   font-size: 1.1em;
   font-weight: bolder;
+} */
+.collapsible::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("imgs/arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+  right: 1em;
+  transition: transform 0.3s ease-out;
 }
-.active::after {
+
+/* .active::after {
   position: absolute;
   content: "-";
   right: 1em;
   font-size: 1.3em;
   font-weight: bolder;
   margin-top: -2px;
+} */
+.active::after {
+  transform: rotate(180deg);
 }
 .collapsible_content {
   background-color: rgb(180, 198, 214);
@@ -51,4 +67,7 @@ body {
   width: 10em;
   background-color: red;
   margin: 1em;
+}
+
+.test {
 }
